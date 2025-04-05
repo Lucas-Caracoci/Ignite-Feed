@@ -36,7 +36,8 @@ function App() {
       {type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
       {type: 'link', content: 'jane.design/doctorcare'},
     ]
-  }
+  },
+  
 ]
 
 
@@ -47,9 +48,10 @@ function App() {
       <div className={styles.wrapper}>
         <Sidebar/>
         <main>
-          {posts.map(post => {
+          {posts.map((post,index) => {
             return(
               <Post
+                key={index}
                 author={post.author}
                 content={post.content}
                 publishedAt={post.publishedAt}
