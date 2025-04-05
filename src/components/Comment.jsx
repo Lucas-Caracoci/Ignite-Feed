@@ -7,10 +7,7 @@ const Comment = ({ content, onDeleteComment }) => {
 
     const [likes , setLikes] = useState(0)
 
-    function handleIncreaseLikes(){
-        setLikes(likes + 1)
-        console.log(likes)
-    }
+   
     function handleDeleteComment() {
 
         onDeleteComment(content)
@@ -33,7 +30,7 @@ const Comment = ({ content, onDeleteComment }) => {
                     <p>{content}</p>
                 </div>
                 <footer>
-                    <button onClick={handleIncreaseLikes}>
+                    <button onClick={(e) => setLikes(likes + 1)}>
                         <ThumbsUp size={24} />
                         Aplaudir <span>{likes}</span>
                     </button>
